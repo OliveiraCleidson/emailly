@@ -1,10 +1,10 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const routes = require('./routes');
+const mongoose = require('mongoose');
 const keys = require('./config/keys');
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const app = express();
-mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Middlewares
 app.use(express.json());
