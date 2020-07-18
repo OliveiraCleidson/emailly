@@ -3,7 +3,7 @@ Welcome to My Project! It's still in construction. I will use Express to be my s
 
 ## How to Run this Project in your machine
 
-1) Create keys.js file in /config folder with the next content:
+1) Create dev.js file in /config folder with the next content:
 ```javascript
    module.exports = {
       googleClientId: 'your-google-clientID',
@@ -12,3 +12,5 @@ Welcome to My Project! It's still in construction. I will use Express to be my s
       cookieKey: 'your Secret Cookie Key'
     }
 ```
+
+This is to run in dev enviroment
