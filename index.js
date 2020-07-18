@@ -5,8 +5,9 @@ const cookieSession = require('cookie-session');
 const cookieParser = require('cookie-parser');
 const keys = require('./config/keys');
 const { passport } = require('./services');
-mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
+
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 const app = express();
 
 // Middlewares
@@ -20,7 +21,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Routes
-app.use("/auth", routes.authRoutes);
+routes(app);
 
 app.get('/', (req, res) => {
   res.send(`<p>Hello World!<p/>`);
