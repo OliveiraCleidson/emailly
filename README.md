@@ -8,6 +8,7 @@ Welcome to My Project! It's still in construction. I will use Express to be my s
    module.exports = {
       googleClientId: 'your-google-clientID',
       googleClientSecret: 'your-client-secret',
-      mongoURI: 'mongodb+srv://<username>:<password>@<cluster>/<dbname>'
+      mongoURI: 'mongodb+srv://<username>:<password>@<cluster>/<dbname>',
+      cookieKey: 'your Secret Cookie Key'
     }
 ```
