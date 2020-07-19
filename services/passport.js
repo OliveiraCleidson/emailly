@@ -14,22 +14,22 @@ passport.deserializeUser((id, done) => {
     });
 });
 
-passport.use(new GoogleStrategy({
-  clientID: keys.googleClientId,
-  clientSecret: keys.googleClientSecret,
-  callbackURL: '/auth/google/callback',
-  proxy: true
-}, (acessToken, refreshToken, profile, done) => {
-  User.findOne({ googleId: profile.id })
-    .then((existingUser) => {
+passport.use(
+  new GoogleStrategy({
+    clientID: keys.googleClientId,
+    clientSecret: keys.googleClientSecret,
+    callbackURL: '/auth/google/callback',
+    proxy: true
+  },
+    async (acessToken, refreshToken, profile, done) => {
+      const existingUser = await User.findOne({ googleId: profile.id });
+
       if (existingUser) {
-        done(null, existingUser);
-      } else {
-        new User({ googleId: profile.id })
-          .save()
-          .then((user) => done(null, user));
+        return done(null, existingUser);
       }
-    });
-}));
+
+      const user = await User({ googleId: profile.id }).save();
+      done(null, user);
+    }));
 
 module.exports = passport;

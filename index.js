@@ -1,24 +1,15 @@
 const express = require('express');
 const routes = require('./routes');
 const mongoose = require('mongoose');
-const cookieSession = require('cookie-session');
-const cookieParser = require('cookie-parser');
 const keys = require('./config/keys');
-const { passport } = require('./services');
+const { middlewares } = require('./services');
 
 
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 const app = express();
 
 // Middlewares
-app.use(express.json());
-app.use(cookieParser(keys.cookieKey));
-app.use(cookieSession({
-  maxAge: 30 * 24 * 60 * 60000,
-  keys: [keys.cookieKey]
-}));
-app.use(passport.initialize());
-app.use(passport.session());
+middlewares(app, express);
 
 // Routes
 routes(app);
@@ -33,7 +24,7 @@ app.get('/api/current_user', (req, res) => {
 
 app.get('/api/logout', (req, res) => {
   req.logout();
-  res.send(req.user);
+  res.redirect("/");
 });
 
 // Server
