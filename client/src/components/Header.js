@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Payments from './Payments';
 
 function renderContent(auth) {
   switch (auth) {
@@ -11,12 +12,12 @@ function renderContent(auth) {
         <li><a href="/auth/google">Login With Google</a></li>
       );
     default:
-      return (<li><a href="/api/logout">Logout</a></li>);
+      return ([<li key="payments"><Payments /></li>,
+      <li key="logout"><a href="/auth/logout">Logout</a></li>]);
   }
 }
 
 function Header(props) {
-  console.log(props.auth);
   return (
     <nav>
       <div className="nav-wrapper">

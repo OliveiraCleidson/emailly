@@ -11,4 +11,13 @@ router.get('/google/callback',
     res.redirect("/surveys");
   });
 
+router.get('/current_user', (req, res) => {
+  res.send(req.user);
+});
+
+router.get('/logout', (req, res) => {
+  req.logout();
+  res.redirect("/");
+});
+
 module.exports = router;

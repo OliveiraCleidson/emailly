@@ -3,15 +3,18 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
+import Payments from './Payments';
 import Header from './Header';
 import Landing from './Landing';
-const Dashboard = () => <h2>Dashboard</h2>;
+const Dashboard = () => <h2>Dashboard<br /><Payments /></h2>;
 const SurveyNew = () => <h2>SurveyNew</h2>;
+
 
 const App = (props) => {
   useEffect(() => {
     props.fetchUser();
-  }, [props]);
+    // eslint-disable-next-line
+  }, []);
   return (
     <div className="container">
       <BrowserRouter>

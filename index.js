@@ -18,15 +18,6 @@ app.get('/', (req, res) => {
   res.send(`<p>Hello World!<p/>`);
 });
 
-app.get('/api/current_user', (req, res) => {
-  res.send(req.user);
-});
-
-app.get('/api/logout', (req, res) => {
-  req.logout();
-  res.redirect("/");
-});
-
 // Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
