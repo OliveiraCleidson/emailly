@@ -11,16 +11,13 @@ const app = express();
 globalMiddlewares(app, express);
 
 // Routes
+routes(app);
+
 if (process.env.NODE_ENV === 'production') {
   const path = require('path');
   app.use(express.static(path.join(__dirname, 'client/build')));
   app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')));
 }
-routes(app);
-
-app.get('/', (req, res) => {
-  res.send(`<p>Hello World!<p/>`);
-});
 
 // Server
 const PORT = process.env.PORT || 5000;
