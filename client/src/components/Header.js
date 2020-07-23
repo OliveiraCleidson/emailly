@@ -13,7 +13,8 @@ function renderContent(auth) {
       );
     default:
       return ([<li key="payments"><Payments /></li>,
-      <li key="logout"><a href="/auth/logout">Logout</a></li>]);
+      <li key="credits">Credits: {auth.credits}</li>,
+      < li key="logout" > <a href="/auth/logout">Logout</a></li >]);
   }
 }
 

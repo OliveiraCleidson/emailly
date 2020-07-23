@@ -2,16 +2,21 @@ const express = require('express');
 const routes = require('./routes');
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
-const { middlewares } = require('./services');
+const { globalMiddlewares } = require('./services');
 
 
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 const app = express();
 
 // Middlewares
-middlewares(app, express);
+globalMiddlewares(app, express);
 
 // Routes
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+  app.get('*', path.resolve(__dirname, 'client', 'build', 'index.html'));
+}
+
 routes(app);
 
 app.get('/', (req, res) => {

@@ -1,6 +1,8 @@
 const passport = require('./passport');
-const middlewares = require('./middlewares');
+const globalMiddlewares = require('./middlewares');
+const requireLogin = require('./requireLogin');
 module.exports = {
   passport,
-  middlewares
+  globalMiddlewares,
+  requireLogin
 }

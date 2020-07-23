@@ -4,14 +4,15 @@ const stripe = require('stripe')(keys.stripeSecretKey);
 
 router.post('/', async (req, res) => {
   const charge = await stripe.charges.create({
-    amount: 5,
+    amount: 500,
     currency: 'BRL',
     source: req.body.id,
     description: 'Pay R$5 for 5 credit email',
   });
-  req.user.credit += 5;
+  req.user.credits += 5;
+  console.log(req.user);
   const user = await req.user.save();
-  res.json(user);
+  res.status(200).send(user);
 });
 
 module.exports = router;
