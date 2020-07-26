@@ -26,4 +26,5 @@ Get Google Credentials: [click here](https://console.developers.google.com/proje
 Get Stripe Credentials: [click here](https://stripe.com/br)
 
 Get Send Grid Credentials: [click here](https://app.sendgrid.com/guide/integrate/langs/nodejs)
+
 This is to run in dev enviroment
