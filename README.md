@@ -1,5 +1,5 @@
 # Emailly
-Welcome to My Project! It's still in construction. I will use Express to be my server provider, MongoDB to persist data, PassportJS to apply Google OAuth strategy, React to my frontend with Redux to apply Flux architecture and other technology like Strike, Email Provider ...
+Welcome to My Project! It's still in construction. I will use Express to be my server provider, MongoDB to persist data, PassportJS to apply Google OAuth strategy, React to my frontend with Redux to apply Flux architecture and other technology like Payment API, Email Provider ...
 
 ## How to Run this Project in your machine
 1) Clone this repository
@@ -15,7 +15,7 @@ Welcome to My Project! It's still in construction. I will use Express to be my s
       googleClientId: 'your-google-clientID',
       googleClientSecret: 'your-client-secret',
       mongoURI: 'mongodb+srv://<username>:<password>@<cluster>/<dbname>',
-      cookieKey: 'your Secret Cookie Key'
+      cookieKey: 'your Secret Cookie Key',
       stripePublishableKey: 'your-stripe-pk',
       stripeSecretKey: 'your-stripe-secret-key',
       sendGridApiKey: 'your-send-grid-api-key'
