@@ -1,7 +1,7 @@
-const cookieParser = require('cookie-parser');
-const cookieSession = require('cookie-session');
-const keys = require('../config/keys');
-const passport = require('./passport');
+const cookieParser = require('cookie-parser'),
+  cookieSession = require('cookie-session'),
+  keys = require('../config/keys'),
+  passport = require('./passport');
 
 module.exports = (app, express) => {
   app.use(express.json());

@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-const { usersSchema } = require('../schemas/');
-const Users = mongoose.model('users', usersSchema);
+const { usersSchema } = require('../schemas/'),
+  mongoose = require('mongoose');
 
-module.exports = Users;
+module.exports = mongoose.model('users', usersSchema);
