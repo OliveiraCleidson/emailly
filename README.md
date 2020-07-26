@@ -22,6 +22,8 @@ Welcome to My Project! It's still in construction. I will use Express to be my s
     }
 ```
 Get Google Credentials: [click here](https://console.developers.google.com/projectselector2/apis/credentials)
+
 Get Stripe Credentials: [click here](https://stripe.com/br)
+
 Get Send Grid Credentials: [click here](https://app.sendgrid.com/guide/integrate/langs/nodejs)
 This is to run in dev enviroment
