@@ -29,4 +29,4 @@ Get Stripe Credentials: [click here](https://stripe.com/br)
 
 Get Send Grid Credentials: [click here](https://app.sendgrid.com/guide/integrate/langs/nodejs)
 
-This is to run in dev enviroment
+This is to run in dev enviroment 
